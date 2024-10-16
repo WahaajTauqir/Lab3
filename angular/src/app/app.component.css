@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #4CAF50;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-item {
+  font-size: 1.1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #45a049;
+}
+
+.nav-link.active {
+  background-color: #388E3C;
+  font-weight: bold;
+}
+
+router-outlet {
+  display: block;
+  margin-top: 2em;
+}
