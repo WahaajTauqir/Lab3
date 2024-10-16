@@ -1,12 +1,21 @@
 <h2>Login</h2>
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="email">Email:</label>
-    <input type="email" id="email" placeholder="Enter your email" />
+    <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+    <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+      <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</small>
+      <small *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format. Please include '&#64;'.</small>
+
+    </div>
   </div>
   <div>
     <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Enter your password" />
+    <input id="password" formControlName="password" type="password" placeholder="Enter your password" />
+    <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+      <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+      <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+    </div>
   </div>
-  <button type="submit">Login</button>
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>

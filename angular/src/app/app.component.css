@@ -1,41 +1,50 @@
 .navbar {
-  background-color: #4CAF50;
-  padding: 1em;
+  background-color: #4B0082;
+  padding: 10px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .nav-list {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  gap: 1.5em;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item {
-  font-size: 1.1rem;
+  margin: 0 15px;
 }
 
 .nav-link {
-  text-decoration: none;
   color: white;
-  padding: 0.5em 1em;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .nav-link:hover {
-  background-color: #45a049;
-}
-
-.nav-link.active {
-  background-color: #388E3C;
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 router-outlet {
+  margin-top: 60px;
   display: block;
-  margin-top: 2em;
+}
+
+.footer {
+  background-color: #4B0082;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
